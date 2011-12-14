@@ -2,11 +2,11 @@
 A wrapper for the QuickTime API for saving movies in the mov format.
 
 ## Compatability ##
-Any platform that runs QuickTime.
-OF 007 : source and example code
-OF 0062: source and example-simple. example-frameBufferObject relies
-            on core functionality of 007, but could be replaced by
-            ofxFrameBufferObject (if you can find it).
+    Any platform that runs QuickTime (i.e. Windows, OS X).
+    OF 007 : source and example code
+    OF 0062: source and example-simple. example-frameBufferObject relies
+                on core functionality of 007, but could be replaced by
+                ofxFrameBufferObject (if you can find it).
 
 ## Attributions ##
 James Hughes wrote the example projects, but has no idea where the
