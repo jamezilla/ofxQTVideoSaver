@@ -422,6 +422,8 @@ void ofxQtVideoSaver::finishMovie(){
     if (hCompressedData   != NULL) DisposeHandle (hCompressedData);
     if (pMovieGWorld      != NULL) DisposeGWorld (pMovieGWorld);
 
+    closeQuicktime();
+
   bail:    
 
     if (sResRefNum != 0) CloseMovieFile (sResRefNum);

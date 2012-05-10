@@ -1,6 +1,10 @@
 # ofxQTVideoSaver #
 A wrapper for the QuickTime API for saving movies in the mov format.
 
+## Gotchas  
+    YOU MUST COMPILE AND LINK AGAINST THE 10.6 (or earlier) SDK on OS
+    X. This will not compile against the 10.7 Lion SDK.
+
 ## Compatability ##
     Any platform that runs QuickTime (i.e. Windows, OS X).
     OF 007 : source and example code
