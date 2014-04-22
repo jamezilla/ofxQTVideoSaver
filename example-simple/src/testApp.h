@@ -3,14 +3,13 @@
 #include "ofMain.h"
 #include "ofxQTVideoSaver.h"
 
-class testApp : public ofBaseApp{
-	
+class testApp : public ofBaseApp
+{	
 public:
-		
-	~testApp();
     void setup();
     void update();
     void draw();
+	void exit();
 		
     void keyPressed(int key);
     void keyReleased(int key);
@@ -33,5 +32,4 @@ public:
     ofxQtVideoSaver     mVidSaver;
 	string				mFileName;
 	float               mTimestamp;
-
 };
