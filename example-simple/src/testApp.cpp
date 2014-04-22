@@ -2,15 +2,8 @@
 #include <string>
 
 //--------------------------------------------------------------
-testApp::~testApp(){
-	// finalize the movie and write it out to disk
-	mVidSaver.finishMovie();
-}
-
-
-//--------------------------------------------------------------
-void testApp::setup(){
-	
+void testApp::setup()
+{
 	camWidth 		= 320;	// try to grab at this size. 
 	camHeight 		= 240;
 	
@@ -30,18 +23,17 @@ void testApp::setup(){
 	// init the movie saver
     mVidSaver.setCodecQualityLevel(OF_QT_SAVER_CODEC_QUALITY_NORMAL);
     mVidSaver.setup(camWidth, camHeight, mFileName);
-
 }
 
-
 //--------------------------------------------------------------
-void testApp::update(){
-	
+void testApp::update()
+{	
 	ofBackground(100,100,100);
 	
-	vidGrabber.grabFrame();
+	vidGrabber.update();
 	
-	if (vidGrabber.isFrameNew()){
+	if (vidGrabber.isFrameNew())
+	{
 		// figure out how much time elapsed since the last frame
 		float time = ofGetElapsedTimef() - mTimestamp;
 		
@@ -51,11 +43,11 @@ void testApp::update(){
 		// update the timestamp to the current time
 		mTimestamp = ofGetElapsedTimef();
 	}
-
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){
+void testApp::draw()
+{
 	ofSetHexColor(0xffffff);
 	
 	ofPushMatrix();
@@ -71,19 +63,24 @@ void testApp::draw(){
     ofDrawBitmapString(mFileName + " will appear in your data folder.",0,40);
 
 	ofPopMatrix();
-	ofPopMatrix();
-	
+	ofPopMatrix();	
 }
-
 
 //--------------------------------------------------------------
-void testApp::keyPressed  (int key){ 
-	
-//	if (key==27) 
-	
+void testApp::exit()
+{
+	// finalize the movie and write it out to disk
+	mVidSaver.finishMovie();
 }
 
-void testApp::createFileName(void)
+//--------------------------------------------------------------
+void testApp::keyPressed(int key)
+{ 
+//	if (key==27) 
+}
+
+//--------------------------------------------------------------
+void testApp::createFileName()
 {
     // create a uniqe file name
 	ostringstream oss;
@@ -97,41 +94,41 @@ void testApp::createFileName(void)
 }
 
 //--------------------------------------------------------------
-void testApp::keyReleased(int key){ 
-	
+void testApp::keyReleased(int key)
+{ 
 }
 
 //--------------------------------------------------------------
-void testApp::mouseMoved(int x, int y ){
-	
+void testApp::mouseMoved(int x, int y)
+{	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseDragged(int x, int y, int button){
-	
+void testApp::mouseDragged(int x, int y, int button)
+{	
 }
 
 //--------------------------------------------------------------
-void testApp::mousePressed(int x, int y, int button){
-	
+void testApp::mousePressed(int x, int y, int button)
+{	
 }
 
 //--------------------------------------------------------------
-void testApp::mouseReleased(int x, int y, int button){
-
+void testApp::mouseReleased(int x, int y, int button)
+{
 }
 
 //--------------------------------------------------------------
-void testApp::windowResized(int w, int h){
-
+void testApp::windowResized(int w, int h)
+{
 }
 
 //--------------------------------------------------------------
-void testApp::gotMessage(ofMessage msg){
-
+void testApp::gotMessage(ofMessage msg)
+{
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
-
+void testApp::dragEvent(ofDragInfo dragInfo)
+{
 }

@@ -2,15 +2,16 @@
 #include <string>
 
 //--------------------------------------------------------------
-testApp::~testApp(){
+void testApp::exit()
+{
 	// finalize the movie and write it out to disk
 	mVidSaver.finishMovie();
 }
 
 
 //--------------------------------------------------------------
-void testApp::setup(){
-	
+void testApp::setup()
+{
 	camWidth 		= 320;	// try to grab at this size. 
 	camHeight 		= 240;
 	
@@ -33,16 +34,15 @@ void testApp::setup(){
 	// init the movie saver
     mVidSaver.setCodecQualityLevel(OF_QT_SAVER_CODEC_QUALITY_NORMAL);
     mVidSaver.setup(camWidth, camHeight, mFileName);
-
 }
 
 
 //--------------------------------------------------------------
-void testApp::update(){
-	
+void testApp::update()
+{
 	ofBackground(100,100,100);
 	
-	vidGrabber.grabFrame();
+	vidGrabber.update();
 	
 	if (vidGrabber.isFrameNew()){
 		// start drawing into a frame buffer object
@@ -72,7 +72,6 @@ void testApp::update(){
 		// update the timestamp to the current time
 		mTimestamp = ofGetElapsedTimef();
 	}
-
 }
 
 //--------------------------------------------------------------
@@ -93,8 +92,7 @@ void testApp::draw(){
     ofDrawBitmapString(mFileName + " will appear in your data folder.",0,40);
 
 	ofPopMatrix();
-	ofPopMatrix();
-	
+	ofPopMatrix();	
 }
 
 
